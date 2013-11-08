@@ -1,9 +1,8 @@
 class PicturesController < ApplicationController
 
-
   def index
     @most_recent_pics = Picture.most_recent_pics
-    @created_before = Picture.created_before(1.month.ago)
+    @created_before = Picture.created_before(1.hour.ago)
   end
 
   def show
@@ -23,7 +22,7 @@ class PicturesController < ApplicationController
     end
   end
 
-    def edit
+  def edit
     @picture = Picture.find(params[:id])
   end
 
