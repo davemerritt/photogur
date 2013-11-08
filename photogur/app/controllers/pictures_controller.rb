@@ -3,6 +3,7 @@ class PicturesController < ApplicationController
 
   def index
     @most_recent_pics = Picture.most_recent_pics
+    @created_before = Picture.created_before(1.month.ago)
   end
 
   def show
